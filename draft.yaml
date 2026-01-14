@@ -1,0 +1,26 @@
+models:
+  Plot:
+    name: string
+    location: string
+  Harvest:
+    plot_id: id foreign
+    kilograms: decimal:8,2
+    harvest_date: date
+  Transport:
+    info: string nullable
+  User:
+    name: string
+    email: string
+    password: string
+
+controllers:
+  Plot:
+    resource: true
+  Harvest:
+    resource: true
+  Transport:
+    resource: true
+  Analysis:
+    reports: view:analysis.reports
+    historyTable: view:analysis.history_table
+    costsTable: view:analysis.costs_table
